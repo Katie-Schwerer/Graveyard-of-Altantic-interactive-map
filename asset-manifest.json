@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Graveyard-of-Altantic-interactive-map/static/css/main.97e0771d.css",
+    "main.js": "/Graveyard-of-Altantic-interactive-map/static/js/main.df732558.js",
+    "static/js/453.f10ed94c.chunk.js": "/Graveyard-of-Altantic-interactive-map/static/js/453.f10ed94c.chunk.js",
+    "index.html": "/Graveyard-of-Altantic-interactive-map/index.html",
+    "main.97e0771d.css.map": "/Graveyard-of-Altantic-interactive-map/static/css/main.97e0771d.css.map",
+    "main.df732558.js.map": "/Graveyard-of-Altantic-interactive-map/static/js/main.df732558.js.map",
+    "453.f10ed94c.chunk.js.map": "/Graveyard-of-Altantic-interactive-map/static/js/453.f10ed94c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.97e0771d.css",
+    "static/js/main.df732558.js"
+  ]
+}
