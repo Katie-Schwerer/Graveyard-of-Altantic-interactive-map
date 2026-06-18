@@ -4,19 +4,17 @@ import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 
 import React, { useEffect } from "react";
-import {
-  CircleMarker,
-  MapContainer,
-  Popup,
-  TileLayer,
-} from "react-leaflet";
+import { CircleMarker, MapContainer, Popup, TileLayer } from "react-leaflet";
 import shipwrecks from "./data/shipwrecks.json";
 import ships from "./data/Shipwrecks-Media.json";
-import MarkerClusterGroup from "react-leaflet-markercluster";
+//import MarkerClusterGroup from "react-leaflet-markercluster";
+//import InfoContainer from "./component/InfoContainer";
 
 function App() {
+  //const [selectedShip, setSelectedShip] = useState(null);
+
   useEffect(() => {
-    console.log(shipwrecks.Shipwrecks);
+    console.log("Hello World");
   }, []);
 
   return (
@@ -31,19 +29,19 @@ function App() {
             maxZoom={20}
             subdomains={["mt0", "mt1", "mt2", "mt3"]}
           />
-
-          <MarkerClusterGroup
-            spiderfyDistanceMultipler={1}
-            showCoverageOnHover={false}
-          >
             {shipwrecks.Shipwrecks.map((ship, index) => (
               <CircleMarker
                 key={index}
                 center={[ship.latitude, ship.longitude]}
-                radius={3}
+                radius={5}
                 fillColor="blue"
                 color="blue"
                 fillOpacity={0.8}
+                eventHandlers={{
+                  click: () => {
+                    console.log(`Shipwreck: ${ship.shipName}`);
+                  },
+                }}
               >
                 <Popup>
                   <p>{ship.shipName}</p>
@@ -51,13 +49,24 @@ function App() {
               </CircleMarker>
             ))}
             {ships.Shipwrecks.map((ship, index) => (
-              <CircleMarker key={index} center={[ship.latitude, ship.longitude]} radius={3} fillColor="blue" color="blue" fillOpacity={0.8}>
+              <CircleMarker
+                key={index}
+                center={[ship.latitude, ship.longitude]}
+                radius={5}
+                fillColor="blue"
+                color="blue"
+                fillOpacity={0.8}
+                eventHandlers={{
+                  click: () => {
+                    console.log("Clicked");
+                  },
+                }}
+              >
                 <Popup>
                   <p>{ship.shipName}</p>
                 </Popup>
               </CircleMarker>
             ))}
-          </MarkerClusterGroup>
         </MapContainer>
       </div>
     </div>

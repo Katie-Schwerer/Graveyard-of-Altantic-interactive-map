@@ -8,7 +8,27 @@
   height: 100vh;
 }
 
+.map-comp {
+  display: flex;
+  flex-direction: row;
+}
+
 /* Sizing of map container */
 .leaflet-container {
-  height: 100vh;
+  height: 93vh;
+  width: 100%;
+  margin: 10px;
+  border-radius: 12px;
+}
+
+.start-up, h2 {
+  text-align: center;
+}
+
+.start-up h3, .ship-wreck-card h2 {
+  margin-bottom: .5rem;
+}
+
+.facts p {
+  margin-bottom: 0.25rem;
 }
