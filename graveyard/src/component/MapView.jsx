@@ -56,6 +56,7 @@ let typeAndIcons = [
   { type: "Tank Landing Ship", icon: <SiCodeship /> },
   { type: "Ironclad", icon: <GiIronHulledWarship /> },
   { type: "Liberty Ship", icon: <FaShip /> },
+  { type: "Unknown", icon: <span className="circle"></span> }
 ];
 
 function MapView() {
@@ -64,7 +65,7 @@ function MapView() {
 
   let shipwreckView = useMemo(() => {
     return shipwrecksArray.filter((ship) => !typeFilter.includes(ship.type));
-  }, [typeFilter]);
+  }, [typeFilter, shipwrecksArray]);
 
   const handleTypeFilter = (type) => {
     if (typeFilter.includes(type)) {
@@ -80,7 +81,7 @@ function MapView() {
     <div className="map-comp">
       <div className="map-filter">
         {typeAndIcons.map((type, index) => (
-          <button className="filter-button" onClick={() => handleTypeFilter(type.type)}>
+          <button key={index} className={`filter-button ${typeFilter.includes(type.type) ? 'non-visible' : ''}`} onClick={() => handleTypeFilter(type.type)}>
             {type.icon} {type.type}
           </button>
         ))}

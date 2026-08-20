@@ -147,7 +147,7 @@
         },
         {
             "shipName": "Agawam",
-            "type": "Gas stern wheel",
+            "type": "Gas Stern Wheel",
             "latitude": 35.1831898,
             "longitude": -75.228523,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -209,7 +209,7 @@
         },
         {
             "shipName": "Alela",
-            "type": "Gas stern wheel",
+            "type": "Gas Stern Wheel",
             "latitude": 34.702378,
             "longitude": -76.669205,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -559,7 +559,7 @@
         },
         {
             "shipName": "Atosaras",
-            "type": "Gas stern wheel",
+            "type": "Gas Stern Wheel",
             "latitude": 35.6004104,
             "longitude": -75.867934,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -644,7 +644,7 @@
         },
         {
             "shipName": "Beatrice",
-            "type": "Gas stern wheel",
+            "type": "Gas Stern Wheel",
             "latitude": 35.1530588,
             "longitude": -75.569563,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -2547,7 +2547,7 @@
         },
         {
             "shipName": "Idler",
-            "type": "Gas stern wheel",
+            "type": "Gas Stern Wheel",
             "latitude": 35.194821,
             "longitude": -75.519593,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -5487,7 +5487,7 @@
         },
         {
             "shipName": "Tamarack",
-            "type": "Gas stern wheel",
+            "type": "Gas Stern Wheel",
             "latitude": 35.1541058202354,
             "longitude": -76.2894878312743,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -7617,7 +7617,7 @@
         },
         {
             "shipName": "Enterprise",
-            "type": "sailing vessel",
+            "type": "Sailing Vessel",
             "latitude": 38.75,
             "longitude": -74.04581,
             "shipwreckEvent": "Unknown",
@@ -7659,7 +7659,7 @@
         },
         {
             "shipName": "Lidie",
-            "type": "sailing vessel",
+            "type": "Sailing Vessel",
             "latitude": 38.33333,
             "longitude": -73,
             "shipwreckEvent": "foundered",
@@ -7679,7 +7679,7 @@
         },
         {
             "shipName": "N A Farwell",
-            "type": "sailing vessel",
+            "type": "Sailing Vessel",
             "latitude": 37.78333,
             "longitude": -73.5,
             "shipwreckEvent": "foundered",
@@ -7689,7 +7689,7 @@
         },
         {
             "shipName": "Maggie Cain",
-            "type": "sailing vessel",
+            "type": "Sailing Vessel",
             "latitude": 36.43333,
             "longitude": -74.43333,
             "shipwreckEvent": "Abandoned",
@@ -7699,7 +7699,7 @@
         },
         {
             "shipName": "Jesse W Starr",
-            "type": "sailing vessel",
+            "type": "Sailing Vessel",
             "latitude": 37.55,
             "longitude": -74.6,
             "shipwreckEvent": "Abandoned",
@@ -7718,7 +7718,7 @@
         },
         {
             "shipName": "Benjamin A VanBrunt",
-            "type": "sailing vessel",
+            "type": "Sailing Vessel",
             "latitude": 36.93333,
             "longitude": -74.76666,
             "shipwreckEvent": "Collision",

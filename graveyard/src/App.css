@@ -52,8 +52,28 @@ h1 {
 button.filter-button {
   background-color: white;
   border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+button.filter-button.non-visible {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
 }
 
 .map-filter {
-  width: 50%;
+  width: 70%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.circle {
+  background-color: blue;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
