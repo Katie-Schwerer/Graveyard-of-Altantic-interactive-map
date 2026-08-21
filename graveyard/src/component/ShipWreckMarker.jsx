@@ -24,6 +24,9 @@ function ShipWreckMarker({ shipwreck }) {
     "patrol boat",
     "tank landing ship",
     "ironclad",
+    "converted trawler",
+    "trawler",
+    "converted yacht"
   ];
 
   if (shipType.includes(shipwreck["type"].toLowerCase())) {

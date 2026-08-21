@@ -57,7 +57,7 @@ function iconDetermine(type) {
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
-  } else if (type.toLowerCase().includes("trawler")) {
+  } else if (type.toLowerCase().includes("trawler") || type.toLowerCase().includes("converted trawler")) {
     iconHTML = ReactDOMServer.renderToString(<GiFishingBoat />);
     divIcon = L.divIcon({
       html: iconHTML,
@@ -138,7 +138,7 @@ function iconDetermine(type) {
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
-  } else if (type.toLowerCase().includes("yacht")) {
+  } else if (type.toLowerCase().includes("yacht")|| type.toLowerCase().includes("converted yacht")) {
     iconHTML = ReactDOMServer.renderToString(<SiMentorcruise />);
     divIcon = L.divIcon({
       html: iconHTML,

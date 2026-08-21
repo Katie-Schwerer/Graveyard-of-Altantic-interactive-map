@@ -1430,7 +1430,7 @@
         },
         {
             "shipName": "E.M. Willis II",
-            "type": "freighter",
+            "type": "Freighter",
             "latitude": 35.0658171,
             "longitude": -76.016751,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -1502,7 +1502,7 @@
         },
         {
             "shipName": "Elizabeth",
-            "type": "freighter",
+            "type": "Freighter",
             "latitude": 35.1401586,
             "longitude": -76.529901,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -1976,7 +1976,7 @@
         },
         {
             "shipName": "George D. Bolster",
-            "type": "freighter",
+            "type": "Freighter",
             "latitude": 34.5073667,
             "longitude": -76.490992,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -4416,7 +4416,7 @@
         },
         {
             "shipName": "North State",
-            "type": "freighter",
+            "type": "Freighter",
             "latitude": 35.2227926,
             "longitude": -75.572169,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -6632,7 +6632,7 @@
         },
         {
             "shipName": "Lillian Luckenbach",
-            "type": "freighter",
+            "type": "Freighter",
             "latitude": 36.976039,
             "longitude": -75.412741,
             "shipwreckEvent": "Ran aground",
@@ -6896,7 +6896,7 @@
         },
         {
             "shipName": "Rosin Wreck",
-            "type": "tanker",
+            "type": "Tanker",
             "latitude": 33.6118,
             "longitude": -77.7694,
             "shipwreckEvent": "Unknown",
@@ -7105,7 +7105,7 @@
         },
         {
             "shipName": "Volunteer",
-            "type": "steamer",
+            "type": "Steamer",
             "latitude": 36.0026262659199,
             "longitude": -75.6465006509076,
             "shipwreckEvent": "Ran aground",
@@ -7638,7 +7638,7 @@
         },
         {
             "shipName": "India Arrow",
-            "type": "tanker",
+            "type": "Tanker",
             "latitude": 38.55833,
             "longitude": -73.835,
             "shipwreckEvent": "Enemy Action",
@@ -7669,7 +7669,7 @@
         },
         {
             "shipName": "Nancy Jane",
-            "type": "Motor vessel diesel",
+            "type": "Motor Vessel Diesel",
             "latitude": 38.26212,
             "longitude": -74.19359,
             "shipwreckEvent": "Unknown",
@@ -7750,7 +7750,7 @@
         },
         {
             "shipName": "Octavian",
-            "type": "freighter",
+            "type": "Freighter",
             "latitude": 38.8102668941193,
             "longitude": -73.6861565450221,
             "wreckLocation": "Last Known Location, current location unknown",
@@ -7784,7 +7784,7 @@
         },
         {
             "shipName": "Charles Morand",
-            "type": "steamer",
+            "type": "Steamer",
             "latitude": 38.92127,
             "longitude": -73.933,
             "shipwreckEvent": "Collision",

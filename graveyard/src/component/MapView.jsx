@@ -51,10 +51,10 @@ let typeAndIcons = [
   { type: "Fishing Vessel", icon: <GiBoatFishing /> },
   { type: "Yacht", icon: <SiMentorcruise /> },
   { type: "Motor Vessel Diesel", icon: <PiEngineBold /> },
-  { type: "Gunboat", icon: <GiBattleship /> },
-  { type: "Patrol Boat", icon: <GiPoliceBadge /> },
-  { type: "Tank Landing Ship", icon: <SiCodeship /> },
-  { type: "Ironclad", icon: <GiIronHulledWarship /> },
+  //{ type: "Gunboat", icon: <GiBattleship /> },
+  //{ type: "Patrol Boat", icon: <GiPoliceBadge /> },
+  //{ type: "Tank Landing Ship", icon: <SiCodeship /> },
+  //{ type: "Ironclad", icon: <GiIronHulledWarship /> },
   { type: "Liberty Ship", icon: <FaShip /> },
   { type: "Unknown", icon: <span className="circle"></span> }
 ];
@@ -68,11 +68,24 @@ function MapView() {
   }, [typeFilter, shipwrecksArray]);
 
   const handleTypeFilter = (type) => {
+    console.log(type);
     if (typeFilter.includes(type)) {
-      let oldFilter = typeFilter.filter((t) => t !== type);
+      let oldFilter = typeFilter;
+      if (type === "Trawler") {
+        oldFilter = oldFilter.filter((t) => t !== "Converted Trawler")
+      } else if (type === "Yacht") {
+        oldFilter = oldFilter.filter((t) => t !== "Converted Yacht")
+      }
+      oldFilter = oldFilter.filter((t) => t !== type);
       setTypeFilter(oldFilter);
     } else {
-      setTypeFilter([...typeFilter, type]);
+      if (type === "Trawler") {
+        setTypeFilter([...typeFilter, "Converted Trawler", type])
+      } else if (type === "Yacht") {
+        setTypeFilter([...typeFilter, "Converted Yacht", type])
+      } else {
+        setTypeFilter([...typeFilter, type]);
+      }
     }
     console.log(typeFilter)
   };
