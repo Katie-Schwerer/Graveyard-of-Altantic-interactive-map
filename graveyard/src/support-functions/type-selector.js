@@ -21,9 +21,9 @@ function iconDetermine(type) {
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
+      iconSize: [18, 18],
       iconAnchor: [12, 12],
-      popupAnchor: [0, -12],
+      popupAnchor: [0, 0],
     });
     
   } else if (type.toLowerCase().includes("tanker")) {
@@ -33,7 +33,7 @@ function iconDetermine(type) {
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
+      iconSize: [18, 18],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
@@ -44,25 +44,23 @@ function iconDetermine(type) {
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
+      iconSize: [18, 18],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("steamer")) {
-    iconHTML = ReactDOMServer.renderToString(<RxColorWheel />);
+    iconHTML = ReactDOMServer.renderToString(<RxColorWheel size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("trawler") || type.toLowerCase().includes("converted trawler")) {
-    iconHTML = ReactDOMServer.renderToString(<GiFishingBoat />);
+    iconHTML = ReactDOMServer.renderToString(<GiFishingBoat size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
@@ -71,75 +69,68 @@ function iconDetermine(type) {
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
+      iconSize: [18, 18],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("lightship")) {
-    iconHTML = ReactDOMServer.renderToString(<FaLightbulb />);
+    iconHTML = ReactDOMServer.renderToString(<FaLightbulb size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("freighter")) {
-    iconHTML = ReactDOMServer.renderToString(<GiCargoShip />);
+    iconHTML = ReactDOMServer.renderToString(<GiCargoShip size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("tugboat")) {
-    iconHTML = ReactDOMServer.renderToString(<RiShip2Fill />);
+    iconHTML = ReactDOMServer.renderToString(<RiShip2Fill size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("dredge")) {
-    iconHTML = ReactDOMServer.renderToString(<GiCargoCrane />);
+    iconHTML = ReactDOMServer.renderToString(<GiCargoCrane size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("submarine")) {
-    iconHTML = ReactDOMServer.renderToString(<GiSubmarine />);
+    iconHTML = ReactDOMServer.renderToString(<GiSubmarine size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("liberty ship")) {
-    iconHTML = ReactDOMServer.renderToString(<FaShip style={{ color: "#455a64" }} />);
+    iconHTML = ReactDOMServer.renderToString(<FaShip style={{ color: "#455a64" }} size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("fishing vessel")) {
-    iconHTML = ReactDOMServer.renderToString(<GiBoatFishing />);
+    iconHTML = ReactDOMServer.renderToString(<GiBoatFishing size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("yacht")|| type.toLowerCase().includes("converted yacht")) {
-    iconHTML = ReactDOMServer.renderToString(<SiMentorcruise />);
+    iconHTML = ReactDOMServer.renderToString(<SiMentorcruise size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
@@ -148,47 +139,42 @@ function iconDetermine(type) {
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("motor vessel diesel")) {
-    iconHTML = ReactDOMServer.renderToString(<PiEngineBold />);
+    iconHTML = ReactDOMServer.renderToString(<PiEngineBold  size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("gunboat")) {
-    iconHTML = ReactDOMServer.renderToString(<GiBattleship />);
+    iconHTML = ReactDOMServer.renderToString(<GiBattleship size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("patrol boat")) {
-    iconHTML = ReactDOMServer.renderToString(<GiPoliceBadge />);
+    iconHTML = ReactDOMServer.renderToString(<GiPoliceBadge size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("tank landing ship")) {
-    iconHTML = ReactDOMServer.renderToString(<SiCodeship />);
+    iconHTML = ReactDOMServer.renderToString(<SiCodeship size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("ironclad")) {
-    iconHTML = ReactDOMServer.renderToString(<GiIronHulledWarship />);
+    iconHTML = ReactDOMServer.renderToString(<GiIronHulledWarship size={18} />);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
-      iconSize: [24, 24],
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
