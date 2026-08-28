@@ -1,10 +1,16 @@
-import React from "react";
-import { CircleMarker, Marker, Popup } from "react-leaflet";
+import React, { useEffect, useRef } from "react";
+import { Marker, Popup } from "react-leaflet";
+import ReactDOMServer from "react-dom/server";
+import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
 import iconDetermine from "../support-functions/type-selector";
+import NormalPopUp from "./popup-component/NormalPopUp";
+
+import CircleIcon from "@mui/icons-material/Circle";
 
 function ShipWreckMarker({ shipwreck }) {
+  const markerRef = useRef();
   const shipType = [
     "sailing vessel",
     "tanker",
@@ -26,12 +32,38 @@ function ShipWreckMarker({ shipwreck }) {
     "ironclad",
     "converted trawler",
     "trawler",
-    "converted yacht"
+    "converted yacht",
   ];
+
+  let iconHTML = ReactDOMServer.renderToString(
+    <CircleIcon style={{ color: "blue", fontSize: 14 }} />
+  );
+  let divIcon = L.divIcon({
+    html: iconHTML,
+    className: "custom-water-icon",
+    iconSize: [10, 10],
+    iconAnchor: [12, 12],
+    popupAnchor: [0, 0],
+  });
+
+  useEffect(() => {
+    if (markerRef.current) {
+      const element = markerRef.current._element;
+      if (element) {
+        element.setAttribute("tabindex", "0");
+        element.setAttribute("role", "button");
+        element.setAttribute(
+          "aria-label",
+          `Shipwreck of ${shipwreck.shipName}`
+        );
+      }
+    }
+  }, [shipwreck.shipName]);
 
   if (shipType.includes(shipwreck["type"].toLowerCase())) {
     return (
       <Marker
+        ref={markerRef}
         position={[shipwreck.latitude, shipwreck.longitude]}
         icon={iconDetermine(shipwreck["type"])}
         eventHandlers={{
@@ -39,31 +71,27 @@ function ShipWreckMarker({ shipwreck }) {
             console.log(`Shipwreck: ${shipwreck.shipName}`);
           },
         }}
+        keyboard={true}
       >
-        <Popup>
-          <p>{shipwreck.shipName}</p>
-        </Popup>
+        <NormalPopUp shipInfo={shipwreck} />
       </Marker>
     );
   }
 
   return (
-    <CircleMarker
-      center={[shipwreck.latitude, shipwreck.longitude]}
-      radius={5}
-      fillColor="blue"
-      color="blue"
-      fillOpacity={0.8}
+    <Marker
+      ref={markerRef}
+      position={[shipwreck.latitude, shipwreck.longitude]}
+      icon={divIcon}
       eventHandlers={{
         click: () => {
-          console.log("Clicked");
+          console.log(`Shipwreck: ${shipwreck.shipName}`);
         },
       }}
+      keyboard={true}
     >
-      <Popup>
-        <p>{shipwreck.shipName}</p>
-      </Popup>
-    </CircleMarker>
+      <NormalPopUp shipInfo={shipwreck} />
+    </Marker>
   );
 }
 

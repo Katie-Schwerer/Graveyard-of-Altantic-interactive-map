@@ -1,0 +1,30 @@
+.leaflet-popup-content-wrapper {
+    width: 300px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.name {
+    margin-top: -0.5rem;
+    margin-bottom: -0.25rem;
+    font-size: 19px;
+}
+
+.facts {
+    margin: auto 1.5rem;
+    font-size: 14px;
+}
+
+.facts p {
+    margin-bottom: -0.5rem;
+}
+
+p.source {
+    margin-top: 1.65rem;
+    font-style: italic;
+}
