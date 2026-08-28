@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Marker, Popup } from "react-leaflet";
+import { Marker } from "react-leaflet";
 import ReactDOMServer from "react-dom/server";
 import L from "leaflet";
 

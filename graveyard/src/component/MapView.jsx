@@ -87,7 +87,6 @@ function MapView() {
         setTypeFilter([...typeFilter, type]);
       }
     }
-    console.log(typeFilter)
   };
 
   return (

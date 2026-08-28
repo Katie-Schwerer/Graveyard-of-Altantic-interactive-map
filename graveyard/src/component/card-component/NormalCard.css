@@ -1,0 +1,27 @@
+.ship-card {
+    width: 300px;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 0.75rem;
+}
+
+h3 {
+    text-align: center;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.facts {
+    display: flex;
+    flex-direction: column;
+    margin: 0 3px;
+}
+
+.facts p {
+    margin: 3px 8px;
+}
