@@ -27,6 +27,7 @@ import { FaLightbulb, FaShip } from "react-icons/fa";
 import { RiShip2Fill } from "react-icons/ri";
 import { SiCodeship, SiMentorcruise } from "react-icons/si";
 import { PiEngineBold } from "react-icons/pi";
+import MapFilter from "./filter-component/MapFilter";
 
 function InvalidateSize() {
   const map = useMap();
@@ -59,16 +60,54 @@ let typeAndIcons = [
   { type: "Unknown", icon: <span className="circle"></span> }
 ];
 
+const shipwrecksArray = shipwrecks.Shipwrecks
+
 function MapView() {
-  const shipwrecksArray = shipwrecks.Shipwrecks
   let [typeFilter, setTypeFilter] = useState([]);
+  let [shipwreckEventsList, setShipwreckEventsList] = useState([])
+  let [shipwreckCountryList, setShipwreckCountryList] = useState([])
+
+  let [event, setEvent] = useState("");
+  let [country, setCountry] = useState("");
 
   let shipwreckView = useMemo(() => {
-    return shipwrecksArray.filter((ship) => !typeFilter.includes(ship.type));
-  }, [typeFilter, shipwrecksArray]);
+    return shipwrecksArray.filter((ship) => {
+      const typeMatch =  !typeFilter.includes(ship.type)
+      const eventMatch = event === "" | ship.shipwreckEvent === event;
+      const countryMatch = country === "" | ship.country === country;
+      return typeMatch && eventMatch && countryMatch;
+    })
+  }, [typeFilter, event, country]);
+
+  useEffect(() => {
+    const events = [];
+    for (let i = 0 ; i < shipwrecksArray.length; i++) {
+      if (!events.includes(shipwrecksArray[i].shipwreckEvent)) {
+        events.push(shipwrecksArray[i].shipwreckEvent)
+      }
+    }
+    setShipwreckEventsList(events);
+  }, []);
+
+  useEffect(() => {
+    const countries = [];
+    for (let i = 0; i < shipwrecksArray.length; i++) {
+      if (!countries.includes(shipwrecksArray[i].country)) {
+        countries.push(shipwrecksArray[i].country)
+      }
+    }
+    setShipwreckCountryList(countries);
+  }, []);
+
+  const handleEventFilter = (event) => {
+    setEvent(event)
+  }
+
+  const handlerCountryFilter = (count) => {
+    setCountry(count);
+  }
 
   const handleTypeFilter = (type) => {
-    console.log(type);
     if (typeFilter.includes(type)) {
       let oldFilter = typeFilter;
       if (type === "Trawler") {
@@ -91,6 +130,7 @@ function MapView() {
 
   return (
     <div className="map-comp">
+      <MapFilter listOfEvents={shipwreckEventsList} shipwreckEvent={event} handleEvent={handleEventFilter} listOfCountries={shipwreckCountryList} shipwreckCountry={country} handleCountry={handlerCountryFilter} />
       <div className="map-filter">
         {typeAndIcons.map((type, index) => (
           <button key={index} className={`filter-button ${typeFilter.includes(type.type) ? 'non-visible' : ''}`} onClick={() => handleTypeFilter(type.type)}>
