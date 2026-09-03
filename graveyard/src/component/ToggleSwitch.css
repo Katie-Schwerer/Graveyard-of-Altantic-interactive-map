@@ -1,7 +1,6 @@
 .toggle-view {
-    margin: 1.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 13.5%;
 }
 

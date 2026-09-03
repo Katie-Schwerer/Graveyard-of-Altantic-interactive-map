@@ -1,34 +1,29 @@
 import React, { useEffect, useState } from "react";
-import './App.css'
+import "./App.css";
 import ToggleSwitch from "./component/ToggleSwitch";
 import MapView from "./component/MapView";
 import TableView from "./component/TableView";
 
 function App() {
-  const [view, setView] = useState("Map")
+  const [view, setView] = useState("Map");
 
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
   const handleChangeView = (viewName) => {
     if (viewName === "Map") {
-      setView("Table")
+      setView("Table");
     } else {
-      setView("Map")
+      setView("Map");
     }
-  }
+  };
 
   return (
     <div className="App">
-      <h1>Graveyard of Altantic</h1>
-      <ToggleSwitch view={view} handleNavigate={handleChangeView} />
-      <div className="view">
-        {view === "Map" ? (
-          <MapView />
-        ) : (
-          <TableView />
-        )}
-      </div>
+      <header>
+        <h1>Graveyard of Altantic</h1>
+        <ToggleSwitch view={view} handleNavigate={handleChangeView} />
+      </header>
+      <div className="view">{view === "Map" ? <MapView /> : <TableView />}</div>
     </div>
   );
 }
