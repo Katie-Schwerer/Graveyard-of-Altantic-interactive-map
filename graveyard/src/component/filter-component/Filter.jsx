@@ -1,5 +1,6 @@
-import React from "react";
-//import { useShipwreckFilters } from "../hooks/useShipwreckFilters";
+import React, { useEffect } from "react";
+import Slider from "@mui/material/Slider";
+import Box from "@mui/material/Box";
 
 import SailingIcon from "@mui/icons-material/Sailing";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
@@ -21,7 +22,6 @@ import { RiShip2Fill } from "react-icons/ri";
 import { SiCodeship, SiMentorcruise } from "react-icons/si";
 import { PiEngineBold } from "react-icons/pi";
 import { useShipwreckFilterContext } from "../provider/ShipwreckFilterContext";
-//import MapFilter from "./filter-component/MapFilter";
 
 let typeAndIcons = [
   {
@@ -61,11 +61,18 @@ function Filter({ view }) {
     country,
     warDownDrop,
     typeFilter,
+    minYear,
+    maxYear,
     handleTypeFilter,
     setCountry,
     setEvent,
-    setWarDownDrop
+    setWarDownDrop,
   } = useShipwreckFilterContext();
+
+  useEffect(() => {
+    console.log(minYear);
+    console.log(maxYear);
+  })
 
   return (
     <section className="filter">
@@ -116,6 +123,21 @@ function Filter({ view }) {
               </option>
             ))}
           </select>
+        </div>
+        <div className="dates">
+          <label htmlFor="date-range">Sunk Year Range: </label>
+          <Box sx={{ width: 300, mx: 3 }}>
+            <Slider
+              id="date-range"
+              min={minYear}
+              max={maxYear}
+              valueLabelDisplay="auto"
+              marks={[
+                { value: minYear, label: `${minYear}` },
+                { value: maxYear, label: `${maxYear}` },
+              ]}
+            />
+          </Box>
         </div>
       </section>
       {view === "Map" && (

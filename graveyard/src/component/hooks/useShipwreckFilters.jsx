@@ -1,7 +1,11 @@
 import { useState, useMemo } from "react";
-import shipwrecks from "../../data/shipwrecks.json"
+import shipwrecks from "../../data/shipwrecks.json";
+import { getMaxYear, getMinYear } from "../../support-functions/date-function";
 
 const shipwrecksArray = shipwrecks.Shipwrecks;
+
+let minYear = getMinYear(shipwrecksArray);
+let maxYear = getMaxYear(shipwrecksArray);
 
 export function useShipwreckFilters() {
   const [typeFilter, setTypeFilter] = useState([]);
@@ -19,7 +23,7 @@ export function useShipwreckFilters() {
 
   const shipWarList = useMemo(() => {
     return [...new Set(shipwrecksArray.map((ship) => ship.wardropdown).filter(Boolean))]
-  }, [])
+  }, []) 
 
   const handleTypeFilter = (type) => {
     if (typeFilter.includes(type)) {
@@ -54,6 +58,8 @@ export function useShipwreckFilters() {
 
   return {
     shipwrecksArray,
+    minYear,
+    maxYear,
     typeFilter,
     event,
     country,
@@ -65,6 +71,6 @@ export function useShipwreckFilters() {
     handleTypeFilter,
     setCountry,
     setEvent,
-    setWarDownDrop
+    setWarDownDrop,
   }
 }
