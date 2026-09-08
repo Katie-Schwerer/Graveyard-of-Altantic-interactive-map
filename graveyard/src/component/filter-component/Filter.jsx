@@ -64,6 +64,7 @@ function Filter({ view }) {
     minYear,
     maxYear,
     handleTypeFilter,
+    handleYearFilter,
     setCountry,
     setEvent,
     setWarDownDrop,
@@ -136,6 +137,7 @@ function Filter({ view }) {
                 { value: minYear, label: `${minYear}` },
                 { value: maxYear, label: `${maxYear}` },
               ]}
+              onChange={(e) => handleYearFilter(e.target.value)}
             />
           </Box>
         </div>
