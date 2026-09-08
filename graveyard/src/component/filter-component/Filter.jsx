@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+
 import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
 
@@ -73,7 +74,8 @@ function Filter({ view }) {
   useEffect(() => {
     console.log(minYear);
     console.log(maxYear);
-  })
+    console.log(typeAndIcons.map((item) => item.type));
+  });
 
   return (
     <section className="filter">
@@ -141,6 +143,21 @@ function Filter({ view }) {
             />
           </Box>
         </div>
+        {view === "Table" && (
+          <div className="table-filter">
+            {typeAndIcons.map((type, index) => (
+              <button
+                key={index}
+                className={`filter-button ${
+                  typeFilter.includes(type.type) ? "non-visible" : ""
+                }`}
+                onClick={() => handleTypeFilter(type.type)}
+              >
+                {type.type}
+              </button>
+            ))}
+          </div>
+        )}
       </section>
       {view === "Map" && (
         <section>

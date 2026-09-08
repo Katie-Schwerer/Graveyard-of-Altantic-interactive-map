@@ -82,8 +82,10 @@ button.filter-button.non-visible {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 1.6rem;
+  width: 95%;
+  margin: 0 auto;
 }
 
 header {

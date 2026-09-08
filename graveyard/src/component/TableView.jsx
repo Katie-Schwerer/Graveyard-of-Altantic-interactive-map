@@ -1,13 +1,14 @@
 import React from "react"
-import shipwrecks from "../data/shipwrecks.json";
 import NormalCard from "./card-component/NormalCard";
 import "../App.css";
 
+import { useShipwreckFilterContext } from "./provider/ShipwreckFilterContext";
+
 function TableView() {
-    let shipwreckTotal = shipwrecks.Shipwrecks; 
+    const { shipwreckView } = useShipwreckFilterContext();
     return (
         <section className="table-view">
-            {shipwreckTotal.map((item, index) => (
+            {shipwreckView.map((item, index) => (
                 <NormalCard shipwreck={item} key={index} />
             ))}
         </section>

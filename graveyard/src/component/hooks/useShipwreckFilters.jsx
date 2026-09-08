@@ -27,6 +27,7 @@ export function useShipwreckFilters() {
   }, []) 
 
   const handleTypeFilter = (type) => {
+    console.log(type)
     if (typeFilter.includes(type)) {
       let oldFilter = typeFilter;
       if (type === "Trawler") {
