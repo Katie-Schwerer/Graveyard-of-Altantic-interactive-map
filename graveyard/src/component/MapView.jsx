@@ -5,9 +5,6 @@ import "leaflet/dist/leaflet.css";
 import "../App.css";
 import ShipWreckMarker from "./ShipWreckMarker";
 
-//import shipwrecks from "../data/shipwrecks.json";
-//import ships from "../data/Shipwrecks-Media.json";
-
 import { useShipwreckFilterContext } from "./provider/ShipwreckFilterContext";
 
 function InvalidateSize() {

@@ -52,6 +52,14 @@ export function useShipwreckFilters() {
     setSelectedYear(year);
   }
 
+  const resetFilters = () => {
+    setTypeFilter([]);
+    setEvent("");
+    setCountry("");
+    setWarDownDrop("");
+    setSelectedYear(0);
+  }
+
   let shipwreckView = useMemo(() => {
     return shipwrecksArray.filter((ship) => {
       const typeMatch = !typeFilter.includes(ship.type);
@@ -80,5 +88,6 @@ export function useShipwreckFilters() {
     setCountry,
     setEvent,
     setWarDownDrop,
+    resetFilters
   }
 }

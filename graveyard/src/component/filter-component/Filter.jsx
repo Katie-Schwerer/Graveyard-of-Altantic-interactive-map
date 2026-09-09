@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
@@ -69,13 +69,8 @@ function Filter({ view }) {
     setCountry,
     setEvent,
     setWarDownDrop,
+    resetFilters
   } = useShipwreckFilterContext();
-
-  useEffect(() => {
-    console.log(minYear);
-    console.log(maxYear);
-    console.log(typeAndIcons.map((item) => item.type));
-  });
 
   return (
     <section className="filter">
@@ -158,6 +153,9 @@ function Filter({ view }) {
             ))}
           </div>
         )}
+      </section>
+      <section className="button-row">
+        <button type="reset" onClick={resetFilters}>Reset Filters</button>
       </section>
       {view === "Map" && (
         <section>
