@@ -133,7 +133,7 @@ function Filter({ view }) {
         </div>
         <div className="dates select">
           <label htmlFor="date-range">Sunk Year Range: </label>
-          <Box sx={{ width: 300, mx: 3 }}>
+          <Box sx={{ width: 700, mx: 3 }}>
             <Slider
               id="date-range"
               min={minYear}
