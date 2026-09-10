@@ -26,8 +26,8 @@ function App() {
           <h1>Graveyard of Altantic</h1>
           <ToggleSwitch view={view} handleNavigate={handleChangeView} />
         </header>
-        <Filter view={view} />
         <div className="view">
+          <Filter view={view} />
           {view === "Map" ? <MapView /> : <TableView />}
         </div>
       </div>

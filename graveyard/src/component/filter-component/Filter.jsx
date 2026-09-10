@@ -24,6 +24,8 @@ import { SiCodeship, SiMentorcruise } from "react-icons/si";
 import { PiEngineBold } from "react-icons/pi";
 import { useShipwreckFilterContext } from "../provider/ShipwreckFilterContext";
 
+import "../filter-component/Filter.css";
+
 let typeAndIcons = [
   {
     type: "Sailing Vessel",
@@ -69,13 +71,20 @@ function Filter({ view }) {
     setCountry,
     setEvent,
     setWarDownDrop,
-    resetFilters
+    resetFilters,
   } = useShipwreckFilterContext();
 
   return (
     <section className="filter">
+      <hr></hr>
+      <div className="filter-heading">
+        <p className="title-filter">Filters the {view}</p>
+        <button className="reset" type="reset" onClick={resetFilters}>
+          Reset the Filters
+        </button>
+      </div>
       <section className="filter-row">
-        <div className="shipwreck-event">
+        <div className="shipwreck-event select">
           <label htmlFor="shipwreck-event">Ship Wreck Event:</label>
           <select
             id="shipwreck-event"
@@ -92,7 +101,7 @@ function Filter({ view }) {
             ))}
           </select>
         </div>
-        <div className="country">
+        <div className="country select">
           <label htmlFor="country">Country: </label>
           <select
             id="country"
@@ -107,7 +116,7 @@ function Filter({ view }) {
             ))}
           </select>
         </div>
-        <div className="war">
+        <div className="war select">
           <label htmlFor="war">War Down Drop: </label>
           <select
             id="war"
@@ -122,7 +131,7 @@ function Filter({ view }) {
             ))}
           </select>
         </div>
-        <div className="dates">
+        <div className="dates select">
           <label htmlFor="date-range">Sunk Year Range: </label>
           <Box sx={{ width: 300, mx: 3 }}>
             <Slider
@@ -138,42 +147,41 @@ function Filter({ view }) {
             />
           </Box>
         </div>
-        {view === "Table" && (
-          <div className="table-filter">
-            {typeAndIcons.map((type, index) => (
-              <button
-                key={index}
-                className={`filter-button ${
-                  typeFilter.includes(type.type) ? "non-visible" : ""
-                }`}
-                onClick={() => handleTypeFilter(type.type)}
-              >
-                {type.type}
-              </button>
-            ))}
-          </div>
-        )}
+        <div className="ship-type">
+          {view === "Map" ? (
+            <div className="map-filter">
+              {typeAndIcons.map((type, index) => (
+                <button
+                  key={index}
+                  className={`filter-button ${
+                    typeFilter.includes(type.type) ? "non-visible" : ""
+                  }`}
+                  onClick={() => handleTypeFilter(type.type)}
+                >
+                  {type.icon} {type.type}
+                </button>
+              ))}
+            </div>
+          ) : (
+            view === "Table" && (
+              <div className="map-filter">
+                {typeAndIcons.map((type, index) => (
+                  <button
+                    key={index}
+                    className={`filter-button ${
+                      typeFilter.includes(type.type) ? "non-visible" : ""
+                    }`}
+                    onClick={() => handleTypeFilter(type.type)}
+                  >
+                    {type.type}
+                  </button>
+                ))}
+              </div>
+            )
+          )}
+        </div>
       </section>
-      <section className="button-row">
-        <button type="reset" onClick={resetFilters}>Reset Filters</button>
-      </section>
-      {view === "Map" && (
-        <section>
-          <div className="map-filter">
-            {typeAndIcons.map((type, index) => (
-              <button
-                key={index}
-                className={`filter-button ${
-                  typeFilter.includes(type.type) ? "non-visible" : ""
-                }`}
-                onClick={() => handleTypeFilter(type.type)}
-              >
-                {type.icon} {type.type}
-              </button>
-            ))}
-          </div>
-        </section>
-      )}
+      <hr />
     </section>
   );
 }
