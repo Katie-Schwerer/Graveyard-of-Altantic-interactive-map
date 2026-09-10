@@ -117,7 +117,7 @@ function Filter({ view }) {
           </select>
         </div>
         <div className="war select">
-          <label htmlFor="war">War Down Drop: </label>
+          <label htmlFor="war">War: </label>
           <select
             id="war"
             value={warDownDrop}

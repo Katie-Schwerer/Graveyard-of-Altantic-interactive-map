@@ -14,8 +14,10 @@ function NormalCard({ shipwreck }) {
             <div className="facts">
                 <p>Date: {shipwreck.sunk ? getShipwreckDate(shipwreck.sunk) : "Unknown"}</p>
                 <p>Shipwreck: {shipwreck.shipwreckEvent ? shipwreck.shipwreckEvent : "Unknown"}</p>
-                <p>Wreck Location: {shipwreck.wreckLocation ? shipwreck.wreckLocation : "Unknown"}</p>
                 <p>Country: {shipwreck.country ? shipwreck.country : "Unknown"}</p>
+                <p>War: {shipwreck.wardropdown ? shipwreck.wardropdown : "Unknown"}</p>
+                {(shipwreck.wreckLocation) && <p>Wreck Location: {shipwreck.wreckLocation}</p>}
+                {(typeof shipwreck.notes === "string") && <p>Notes: {shipwreck.notes}</p>}
             </div>
             <p className="source">{shipwreck.source}</p>
         </div>

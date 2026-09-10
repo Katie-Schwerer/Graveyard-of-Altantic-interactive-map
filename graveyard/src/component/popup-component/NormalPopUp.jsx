@@ -25,8 +25,10 @@ function NormalPopUp({shipInfo}) {
             <div className="facts">
                 <p>Date: {shipInfo.sunk ? getShipwreckDate(shipInfo.sunk) : "Unknown"}</p>
                 <p>Shipwreck: {shipInfo.shipwreckEvent ? shipInfo.shipwreckEvent : "Unknown"}</p>
-                <p>Wreck Location: {shipInfo.wreckLocation ? shipInfo.wreckLocation : "Unknown"}</p>
                 <p>Country: {shipInfo.country ? shipInfo.country : "Unknown"}</p>
+                <p>War: {shipInfo.wardropdown ? shipInfo.wardropdown : "Unknown"}</p>
+                {(shipInfo.wreckLocation) && <p>Wreck Location: {shipInfo.wreckLocation}</p>}
+                {(typeof shipInfo.notes === "string") && <p>Notes: {shipInfo.notes}</p>}
             </div>
             <p className="source">{shipInfo.source}</p>
         </Popup>
