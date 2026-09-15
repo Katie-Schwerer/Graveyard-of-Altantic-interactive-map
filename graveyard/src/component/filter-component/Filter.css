@@ -55,3 +55,12 @@ hr {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+.filter-label, label {
+    font-weight: bold;
+}
+
+.filter-label {
+    text-align: center;
+    margin-top: 1.5rem;
+}

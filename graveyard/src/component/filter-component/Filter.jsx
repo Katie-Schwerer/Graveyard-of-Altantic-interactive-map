@@ -148,6 +148,7 @@ function Filter({ view }) {
           </Box>
         </div>
         <div className="ship-type">
+          <p className="filter-label">Ship Type Filter Buttons:</p>
           {view === "Map" ? (
             <div className="map-filter">
               {typeAndIcons.map((type, index) => (
