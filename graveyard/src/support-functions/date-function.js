@@ -8,16 +8,16 @@ export function getShipwreckDate(date) {
   return dateOfWreck.toLocaleDateString();
 };
 
-export function getMinYear(list) {
+export function getMinYear(list1, list2) {
+  let list = [...list1, ...list2]
   let dates = new Set(list.map((d) => new Date(d.sunk)).filter(year => !isNaN(year)));
   let year = new Date(Math.min(...dates));
   return year.getFullYear();
 }
 
-export function getMaxYear(list) {
+export function getMaxYear(list1, list2) {
+  let list = [...list1, ...list2]
   let dates = [...new Set(list.map((d) => new Date(d.sunk)).filter(year => !isNaN(year)))];
-  console.log(dates);
   let year = new Date(Math.max(...dates));
-  console.log(year)
   return year.getFullYear();
 }

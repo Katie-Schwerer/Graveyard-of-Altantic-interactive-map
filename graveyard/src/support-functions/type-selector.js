@@ -89,7 +89,7 @@ function iconDetermine(type) {
       iconAnchor: [12, 12],
       popupAnchor: [0, -12],
     });
-  } else if (type.toLowerCase().includes("tugboat")) {
+  } else if (type.toLowerCase().includes("tugboat") || type.toLowerCase().includes("converted tugboat")) {
     iconHTML = ReactDOMServer.renderToString(<RiShip2Fill size={18} color="b40032"/>);
     divIcon = L.divIcon({
       html: iconHTML,

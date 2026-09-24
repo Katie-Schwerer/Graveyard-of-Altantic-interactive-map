@@ -6717,7 +6717,7 @@
             "latitude": 36.212409,
             "longitude": -75.125131,
             "shipwreckEvent": "Storm",
-            "sunk": "1903-9-15T06:00:00.000Z",
+            "sunk": "1903-09-15T06:00:00.000Z",
             "country": "United Kingdom",
             "source": "Newspaper article"
         },

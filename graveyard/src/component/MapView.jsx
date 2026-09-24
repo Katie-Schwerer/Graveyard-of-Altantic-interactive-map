@@ -16,7 +16,7 @@ function InvalidateSize() {
 }
 
 function MapView() {
-  const { shipwreckView } = useShipwreckFilterContext();
+  const { shipwreckView, shipwreckViewDescription } = useShipwreckFilterContext();
 
   return (
     <div className="map-comp">
@@ -32,6 +32,9 @@ function MapView() {
         />
         {shipwreckView.map((ship, index) => (
           <ShipWreckMarker shipwreck={ship} key={index} />
+        ))}
+        {shipwreckViewDescription.map((ship, index) => (
+          <ShipWreckMarker shipwreck={ship} key={index} description={true}/>
         ))}
       </MapContainer>
     </div>

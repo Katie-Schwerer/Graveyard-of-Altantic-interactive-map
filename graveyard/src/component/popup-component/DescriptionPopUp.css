@@ -1,0 +1,32 @@
+.leaflet-popup-content-wrapper {
+    width: 400px;
+}
+
+.leaflet-popup-content-wrapper button {
+    font-size: 13px;
+    background-color: rgb(0, 148, 247);
+    border: 1px solid black;
+    color: white;
+    font-weight: bold;
+}
+
+.leaflet-popup-content {
+    width: 380px !important;
+}
+
+.bottom-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* vertically centers text with button */
+    gap: 12px;
+    width: 360px;
+}
+
+.bottom-section p {
+   margin-top: 1rem; 
+}
+
+h4 {
+    font-size: 1.5rem;
+}

@@ -8,8 +8,9 @@ import iconDetermine from "../support-functions/type-selector";
 import NormalPopUp from "./popup-component/NormalPopUp";
 
 import CircleIcon from "@mui/icons-material/Circle";
+import DescriptionPopUp from "./popup-component/DescriptionPopUp";
 
-function ShipWreckMarker({ shipwreck }) {
+function ShipWreckMarker({ shipwreck, description = false }) {
   const markerRef = useRef();
   const shipType = [
     "sailing vessel",
@@ -33,6 +34,7 @@ function ShipWreckMarker({ shipwreck }) {
     "converted trawler",
     "trawler",
     "converted yacht",
+    "converted tugboat"
   ];
 
   let iconHTML = ReactDOMServer.renderToString(
@@ -73,7 +75,7 @@ function ShipWreckMarker({ shipwreck }) {
         }}
         keyboard={true}
       >
-        <NormalPopUp shipInfo={shipwreck} />
+        { description ? <DescriptionPopUp shipwreck={shipwreck} /> : <NormalPopUp shipInfo={shipwreck} /> }
       </Marker>
     );
   }
@@ -90,7 +92,7 @@ function ShipWreckMarker({ shipwreck }) {
       }}
       keyboard={true}
     >
-      <NormalPopUp shipInfo={shipwreck} />
+      { description ? <DescriptionPopUp shipwreck={shipwreck} /> : <NormalPopUp shipInfo={shipwreck} /> }
     </Marker>
   );
 }
