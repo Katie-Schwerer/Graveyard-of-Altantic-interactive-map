@@ -16,14 +16,14 @@ function NormalPopUp({shipInfo}) {
     }
 
     return (
-        <Popup>
+        <Popup style={{ width: "300px !important" }}>
             <div className="heading">
                 <p>{shipInfo.type}</p>
                 <p>Year: { shipInfo.sunk ? getShipWreckYear(shipInfo.sunk) : "Unknown"}</p>
             </div>
             <h4 className="name">{shipInfo.shipName}</h4>
             <div className="facts">
-                <p>Date: {shipInfo.sunk ? getShipwreckDate(shipInfo.sunk) : "Unknown"}</p>
+                <p>Shipwreck Date: {shipInfo.sunk ? getShipwreckDate(shipInfo.sunk) : "Unknown"}</p>
                 <p>Shipwreck: {shipInfo.shipwreckEvent ? shipInfo.shipwreckEvent : "Unknown"}</p>
                 <p>Country: {shipInfo.country ? shipInfo.country : "Unknown"}</p>
                 <p>War: {shipInfo.wardropdown ? shipInfo.wardropdown : "Unknown"}</p>

@@ -21,9 +21,8 @@ function MapView() {
   return (
     <div className="map-comp">
       <MapContainer
-        center={[35.2909874203695, -75.6829703698898]}
-        zoom={7}
-        style={{ height: "93vh", width: "100%" }}
+        center={[35.193515, -75.494042]}
+        zoom={8}
       >
         <InvalidateSize />
         <TileLayer

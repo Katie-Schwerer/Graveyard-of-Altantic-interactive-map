@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {createPortal} from "react-dom"
 import { Popup } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
@@ -48,9 +49,10 @@ function DescriptionPopUp({ shipwreck }) {
         </div>
       </Popup>
 
-      <Modal isOpen={isOpen}>
-
-      </Modal>
+      {isOpen && createPortal(
+        <Modal setOpen={setIsOpen} shipwreck={shipwreck} images={image} videos={video}/>,
+        document.body
+      )}
     </>
   );
 }

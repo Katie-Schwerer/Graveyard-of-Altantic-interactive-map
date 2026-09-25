@@ -12,7 +12,7 @@ function NormalCard({ shipwreck }) {
                 <p>Year: { shipwreck.sunk ? getShipWreckYear(shipwreck.sunk) : "Unknown"}</p>
             </div>
             <div className="facts">
-                <p>Date: {shipwreck.sunk ? getShipwreckDate(shipwreck.sunk) : "Unknown"}</p>
+                <p>Shipwreck Date: {shipwreck.sunk ? getShipwreckDate(shipwreck.sunk) : "Unknown"}</p>
                 <p>Shipwreck: {shipwreck.shipwreckEvent ? shipwreck.shipwreckEvent : "Unknown"}</p>
                 <p>Country: {shipwreck.country ? shipwreck.country : "Unknown"}</p>
                 <p>War: {shipwreck.wardropdown ? shipwreck.wardropdown : "Unknown"}</p>

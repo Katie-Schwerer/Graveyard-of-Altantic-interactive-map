@@ -8,4 +8,32 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+}
+
+.modal-body {
+    background-color: white;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 25px;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal-header button {
+    background-color: white;
+    padding: 0 0.5rem;
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+p.source {
+    margin-top: 1.25rem;
+    font-style: italic;
 }

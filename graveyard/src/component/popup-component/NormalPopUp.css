@@ -1,12 +1,11 @@
-.leaflet-popup-content-wrapper {
-    width: 300px;
-}
+
 
 .heading {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 14px;
+    width: 90%;
 }
 
 .name {
