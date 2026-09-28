@@ -6,14 +6,15 @@ import { useShipwreckFilterContext } from "./provider/ShipwreckFilterContext";
 import Pagination from "./Pagination";
 
 function TableView() {
-  const { shipwreckView } = useShipwreckFilterContext();
+  const { shipwreckView, shipwreckViewDescription } = useShipwreckFilterContext();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
 
-  const totalPages = Math.ceil(shipwreckView.length / itemsPerPage);
+  const combined = [...shipwreckView, ...shipwreckViewDescription]
+  const totalPages = Math.ceil(combined.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const lastIndex = startIndex + itemsPerPage;
-  const currentItems = shipwreckView.slice(startIndex, lastIndex);
+  const currentItems = combined.slice(startIndex, lastIndex);
 
   return (
     <section className="table">

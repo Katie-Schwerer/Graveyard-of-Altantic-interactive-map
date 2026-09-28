@@ -183,6 +183,7 @@ function Filter({ view }) {
         </div>
       </section>
       <hr />
+      
     </section>
   );
 }

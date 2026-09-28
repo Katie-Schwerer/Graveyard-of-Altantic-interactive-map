@@ -1,8 +1,12 @@
 import React from 'react';
 import { getShipWreckYear, getShipwreckDate } from "../../support-functions/date-function.js"
 import "./NormalCard.css";
+import DescriptionCard from './DescriptionCard.jsx';
 
 function NormalCard({ shipwreck }) {
+    if (shipwreck.description) {
+        return <DescriptionCard shipwreck={shipwreck} /> 
+    }
     return (
         <div className='ship-card'>
             <h3>{shipwreck.shipName}</h3>
