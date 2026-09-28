@@ -9,3 +9,15 @@
 .page {
     margin: auto 1rem;
 }
+
+.pagination button {
+    background-color: navy;
+    color: white;
+    border: 2px solid rgb(0, 0, 50);
+    font-weight: bold;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    background-color: #8067c2;
+}

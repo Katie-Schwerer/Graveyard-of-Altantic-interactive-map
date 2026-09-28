@@ -72,7 +72,11 @@ function Filter({ view }) {
     setEvent,
     setWarDownDrop,
     resetFilters,
+    shipwreckView,
+    shipwreckViewDescription
   } = useShipwreckFilterContext();
+
+  let total = [...shipwreckView, ...shipwreckViewDescription];
 
   return (
     <section className="filter">
@@ -183,7 +187,7 @@ function Filter({ view }) {
         </div>
       </section>
       <hr />
-      
+      <p class="total">{`Showing ${total.length} shipwrecks`}</p>
     </section>
   );
 }

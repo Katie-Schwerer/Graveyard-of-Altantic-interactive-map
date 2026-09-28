@@ -1,6 +1,6 @@
 import React from 'react';
 import { getShipWreckYear, getShipwreckDate } from "../../support-functions/date-function.js"
-import "./NormalCard.css";
+import "./Card.css";
 import DescriptionCard from './DescriptionCard.jsx';
 
 function NormalCard({ shipwreck }) {

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import NormalCard from "./card-component/NormalCard";
+import React, { useState, useEffect } from "react";
+import NormalCard from "./card-component/Card";
 import "../App.css";
 
 import { useShipwreckFilterContext } from "./provider/ShipwreckFilterContext";
@@ -15,6 +15,10 @@ function TableView() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const lastIndex = startIndex + itemsPerPage;
   const currentItems = combined.slice(startIndex, lastIndex);
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [shipwreckView, shipwreckViewDescription])
 
   return (
     <section className="table">

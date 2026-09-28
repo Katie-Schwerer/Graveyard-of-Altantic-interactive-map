@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { createPortal } from "react-dom";
 import Modal from "../popup-component/Modal";
 import { getShipWreckYear } from "../../support-functions/date-function";
-import './NormalCard.css'
+import './Card.css'
 
 function DescriptionCard({ shipwreck }) {
   const [image, setImage] = useState([]);
