@@ -52,6 +52,7 @@ h1 {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 button.filter-button {
@@ -93,10 +94,44 @@ button.filter-button.non-visible {
 }
 
 header {
-  width: 98%;
+  width: 95%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 1.5rem;
+}
+
+@media (max-width: 1300px) {
+  .leaflet-container {
+    height: 80vh;
+  }
+
+  .map-comp {
+    height: 80vh;
+  }
+
+  .map-filter {
+    width: 70%;
+  }
+}
+
+@media (max-width: 550px) {
+  .leaflet-container {
+    height: 70vh;
+  }
+
+  .map-comp {
+    height: 70vh;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  header h1 {
+    margin-bottom: 0.6rem;
+  }
 }

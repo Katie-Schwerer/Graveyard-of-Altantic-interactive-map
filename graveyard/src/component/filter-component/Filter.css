@@ -8,7 +8,6 @@
 
 .filter {
     margin-left: 1.5rem;
-    border-right: 2px solid black;
 }
 
 .reset {
@@ -43,7 +42,7 @@ label {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 hr {
@@ -69,4 +68,19 @@ hr {
     font-size: 1.1rem;
     margin-bottom: 1rem;
     margin-top: 0.75rem;
+}
+
+@media (max-width: 555px) {
+    .filter-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .select {
+        width: 95%
+    }
 }
