@@ -147,7 +147,7 @@ function iconDetermine(type) {
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("gunboat")) {
-    iconHTML = ReactDOMServer.renderToString(<GiBattleship size={18} />);
+    iconHTML = ReactDOMServer.renderToString(<GiBattleship size={18} color="455ABC"/>);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
@@ -155,7 +155,7 @@ function iconDetermine(type) {
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("patrol boat")) {
-    iconHTML = ReactDOMServer.renderToString(<GiPoliceBadge size={18} />);
+    iconHTML = ReactDOMServer.renderToString(<GiPoliceBadge size={18} color="CF000B"/>);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
@@ -163,7 +163,7 @@ function iconDetermine(type) {
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("tank landing ship")) {
-    iconHTML = ReactDOMServer.renderToString(<SiCodeship size={18} />);
+    iconHTML = ReactDOMServer.renderToString(<SiCodeship size={18} color="107300"/>);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",
@@ -171,7 +171,7 @@ function iconDetermine(type) {
       popupAnchor: [0, -12],
     });
   } else if (type.toLowerCase().includes("ironclad")) {
-    iconHTML = ReactDOMServer.renderToString(<GiIronHulledWarship size={18} />);
+    iconHTML = ReactDOMServer.renderToString(<GiIronHulledWarship size={18} color="5B5E5D"/>);
     divIcon = L.divIcon({
       html: iconHTML,
       className: "custom-water-icon",

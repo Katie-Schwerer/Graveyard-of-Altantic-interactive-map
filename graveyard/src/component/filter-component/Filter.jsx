@@ -47,10 +47,10 @@ let typeAndIcons = [
   { type: "Fishing Vessel", icon: <GiBoatFishing size={18} color="8c00c8" /> },
   { type: "Yacht", icon: <SiMentorcruise size={18} color="00606f"/> },
   { type: "Motor Vessel Diesel", icon: <PiEngineBold size={18} color="386300" /> },
-  { type: "Gunboat", icon: <GiBattleship /> },
-  { type: "Patrol Boat", icon: <GiPoliceBadge /> },
-  { type: "Tank Landing Ship", icon: <SiCodeship /> },
-  { type: "Ironclad", icon: <GiIronHulledWarship /> },
+  { type: "Gunboat", icon: <GiBattleship color="455ABC"/> },
+  { type: "Patrol Boat", icon: <GiPoliceBadge color="CF000B" /> },
+  { type: "Tank Landing Ship", icon: <SiCodeship color="107300" /> },
+  { type: "Ironclad", icon: <GiIronHulledWarship color="5B5E5D" /> },
   { type: "Liberty Ship", icon: <FaShip size={18} color="#455a64"/> },
   { type: "Unknown", icon: <span className="circle"></span> },
 ];
@@ -79,24 +79,24 @@ function Filter({ view }) {
   let total = [...shipwreckView, ...shipwreckViewDescription];
 
   return (
-    <section className="filter">
+    <section className="filter" aria-label={`Filters the ${view}`}>
       <hr></hr>
       <div className="filter-heading">
         <p className="title-filter">Filters the {view}</p>
-        <button className="reset" type="reset" onClick={resetFilters}>
+        <button className="reset" type="button" onClick={resetFilters}>
           Reset the Filters
         </button>
       </div>
-      <section className="filter-row">
+      <div className="filter-row">
         <div className="shipwreck-event select">
-          <label htmlFor="shipwreck-event">Ship Wreck Event:</label>
+          <label htmlFor="shipwreck-event">Shipwreck Event:</label>
           <select
             id="shipwreck-event"
             value={event}
             onChange={(e) => setEvent(e.target.value)}
           >
-            <option value="" disabled>
-              Select From the Ship Wreck Event:
+            <option value="">
+              Select From the Shipwreck Event:
             </option>
             {shipwreckEventsList.map((item, index) => (
               <option key={index} value={item}>
@@ -127,7 +127,7 @@ function Filter({ view }) {
             value={warDownDrop}
             onChange={(e) => setWarDownDrop(e.target.value)}
           >
-            <option value="">Select From the Country List</option>
+            <option value="">Select From Different Wars</option>
             {shipWarList.map((item, index) => (
               <option key={index} value={item}>
                 {item}
@@ -162,8 +162,9 @@ function Filter({ view }) {
                     typeFilter.includes(type.type) ? "non-visible" : ""
                   }`}
                   onClick={() => handleTypeFilter(type.type)}
+                  aria-pressed={typeFilter.includes(type.type)}
                 >
-                  {type.icon} {type.type}
+                  <span aria-hidden="true">{type.icon}</span> {type.type}
                 </button>
               ))}
             </div>
@@ -177,6 +178,7 @@ function Filter({ view }) {
                       typeFilter.includes(type.type) ? "non-visible" : ""
                     }`}
                     onClick={() => handleTypeFilter(type.type)}
+                    aria-pressed={typeFilter.includes(type.type)}
                   >
                     {type.type}
                   </button>
@@ -185,9 +187,9 @@ function Filter({ view }) {
             )
           )}
         </div>
-      </section>
+      </div>
       <hr />
-      <p class="total">{`Showing ${total.length} shipwrecks`}</p>
+      <p className="total">{`Showing ${total.length} shipwrecks`}</p>
     </section>
   );
 }

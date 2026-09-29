@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {createPortal} from "react-dom"
 import { Popup } from "react-leaflet";
 
@@ -12,6 +12,7 @@ function DescriptionPopUp({ shipwreck }) {
   const [video, setVideo] = useState([]);
 
   const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef(null);
 
   useEffect(() => {
     let mediaImage = [];
@@ -33,7 +34,7 @@ function DescriptionPopUp({ shipwreck }) {
   return (
     <>
       <Popup>
-        {image.length > 0 && <img src={image[0].path} alt={image[0].caption} />}
+        {image.length > 0 && <img src={image[0].path} alt={image[0].caption?.replace(/<\/?i>/g, "") || `Shipwreck of ${shipwreck.shipName}`} />}
         <div className="heading">
           <p>{shipwreck.type}</p>
         </div>
@@ -43,14 +44,14 @@ function DescriptionPopUp({ shipwreck }) {
             Year:{" "}
             {shipwreck.sunk ? getShipWreckYear(shipwreck.sunk) : "Unknown"}
           </p>
-          <button onClick={() => setIsOpen(true)}>
+          <button type="button" ref={triggerRef} onClick={() => setIsOpen(true)}>
             Get More Information on {shipwreck.shipName}
           </button>
         </div>
       </Popup>
 
       {isOpen && createPortal(
-        <Modal setOpen={setIsOpen} shipwreck={shipwreck} images={image} videos={video}/>,
+        <Modal triggerRef={triggerRef} setOpen={setIsOpen} shipwreck={shipwreck} images={image} videos={video}/>,
         document.body
       )}
     </>

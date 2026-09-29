@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { createPortal } from "react-dom";
 import Modal from "../popup-component/Modal";
 import { getShipWreckYear } from "../../support-functions/date-function";
@@ -9,6 +9,7 @@ function DescriptionCard({ shipwreck }) {
   const [video, setVideo] = useState([]);
 
   const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef(null);
 
   useEffect(() => {
     if (!shipwreck) return;
@@ -42,14 +43,14 @@ function DescriptionCard({ shipwreck }) {
         </div>
         <h3>{shipwreck.shipName}</h3>
         <div className="bottom">
-          <button onClick={() => setIsOpen(true)}>
+          <button type="button" ref={triggerRef} onClick={() => setIsOpen(true)}>
             Get More Information on {shipwreck.shipName}
           </button>
         </div>
       </div>
 
       {isOpen && createPortal(
-        <Modal setOpen={setIsOpen} shipwreck={shipwreck} images={image} videos={video}/>,
+        <Modal triggerRef={triggerRef} setOpen={setIsOpen} shipwreck={shipwreck} images={image} videos={video}/>,
         document.body
       )}
     </>

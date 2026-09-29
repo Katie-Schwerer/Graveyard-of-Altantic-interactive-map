@@ -61,6 +61,8 @@ button.filter-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-right: 3px;
+  margin-bottom: 3px;
 }
 
 button.filter-button.non-visible {
@@ -134,4 +136,9 @@ header {
   header h1 {
     margin-bottom: 0.6rem;
   }
+}
+
+:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
 }

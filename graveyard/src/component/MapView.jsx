@@ -23,6 +23,7 @@ function MapView() {
       <MapContainer
         center={[35.193515, -75.494042]}
         zoom={8}
+        aria-label="Map of North Carolina Coast"
       >
         <InvalidateSize />
         <TileLayer

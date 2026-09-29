@@ -21,16 +21,16 @@ function App() {
 
   return (
     <ShipwreckFilterProvider>
-      <div className="App">
+      <main className="App">
         <header>
-          <h1>Graveyard of Altantic</h1>
+          <h1>Graveyard of the Atlantic</h1>
           <ToggleSwitch view={view} handleNavigate={handleChangeView} />
         </header>
         <div className="view">
           <Filter view={view} />
           {view === "Map" ? <MapView /> : <TableView />}
         </div>
-      </div>
+      </main>
     </ShipwreckFilterProvider>
   );
 }
