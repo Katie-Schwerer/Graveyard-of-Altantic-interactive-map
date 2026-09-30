@@ -164,7 +164,7 @@ function Filter({ view }) {
                   onClick={() => handleTypeFilter(type.type)}
                   aria-pressed={typeFilter.includes(type.type)}
                 >
-                  <span aria-hidden="true">{type.icon}</span> {type.type}
+                  <span aria-hidden="true" className={typeFilter.includes(type.type) && "hide"}>{type.icon}</span> {type.type}
                 </button>
               ))}
             </div>
