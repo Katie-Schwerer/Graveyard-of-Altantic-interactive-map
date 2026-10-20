@@ -5,13 +5,13 @@ import Box from "@mui/material/Box";
 
 import SailingIcon from "@mui/icons-material/Sailing";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
-import GasMeterIcon from "@mui/icons-material/GasMeter";
+//import GasMeterIcon from "@mui/icons-material/GasMeter";
 import DirectionsBoatIcon from "@mui/icons-material/DirectionsBoat";
 import { RxColorWheel } from "react-icons/rx";
 import {
   GiBattleship,
   GiBoatFishing,
-  GiCargoCrane,
+  //GiCargoCrane,
   GiCargoShip,
   GiFishingBoat,
   GiIronHulledWarship,
@@ -21,7 +21,7 @@ import {
 import { FaLightbulb, FaShip } from "react-icons/fa";
 import { RiShip2Fill } from "react-icons/ri";
 import { SiCodeship, SiMentorcruise } from "react-icons/si";
-import { PiEngineBold } from "react-icons/pi";
+//import { PiEngineBold } from "react-icons/pi";
 import { useShipwreckFilterContext } from "../provider/ShipwreckFilterContext";
 
 import "../filter-component/Filter.css";
@@ -32,27 +32,27 @@ let typeAndIcons = [
     icon: <SailingIcon style={{ fontSize: "18px" }} />,
   },
   { type: "Tanker", icon: <WaterDropIcon style={{ fontSize: "18px", color: "#3019E2" }} /> },
-  {
+  /*{
     type: "Gas Stern Wheel",
     icon: <GasMeterIcon style={{ fontSize: "18px", color: "#d32f2f" }} />,
-  },
+  },*/
   { type: "Steamer", icon: <RxColorWheel size={18} color="006700"/> },
   { type: "Trawler", icon: <GiFishingBoat size={18} color="5A24E2" /> },
   { type: "Barge", icon: <DirectionsBoatIcon style={{ fontSize: "18px", color: "#5649a8" }} /> },
   { type: "Lightship", icon: <FaLightbulb size={18} color="4a6000"/> },
   { type: "Freighter", icon: <GiCargoShip size={18} color="9c3600"/> },
   { type: "Tugboat", icon: <RiShip2Fill size={18} color="b40032"/> },
-  { type: "Dredge", icon: <GiCargoCrane size={18} color="A80080"/> },
+  //{ type: "Dredge", icon: <GiCargoCrane size={18} color="A80080"/> },
   { type: "Submarine", icon: <GiSubmarine size={18} color="0057ad"/> },
   { type: "Fishing Vessel", icon: <GiBoatFishing size={18} color="8c00c8" /> },
   { type: "Yacht", icon: <SiMentorcruise size={18} color="00606f"/> },
-  { type: "Motor Vessel Diesel", icon: <PiEngineBold size={18} color="386300" /> },
+  //{ type: "Motor Vessel Diesel", icon: <PiEngineBold size={18} color="386300" /> },
   { type: "Gunboat", icon: <GiBattleship color="455ABC"/> },
   { type: "Patrol Boat", icon: <GiPoliceBadge color="CF000B" /> },
   { type: "Tank Landing Ship", icon: <SiCodeship color="107300" /> },
   { type: "Ironclad", icon: <GiIronHulledWarship color="5B5E5D" /> },
   { type: "Liberty Ship", icon: <FaShip size={18} color="#455a64"/> },
-  { type: "Unknown", icon: <span className="circle"></span> },
+  //{ type: "Unknown", icon: <span className="circle"></span> },
 ];
 
 function Filter({ view }) {
@@ -72,12 +72,12 @@ function Filter({ view }) {
     setEvent,
     setWarDownDrop,
     resetFilters,
-    shipwreckView,
+    //shipwreckView,
     shipwreckViewDescription
   } = useShipwreckFilterContext();
 
-  let total = [...shipwreckView, ...shipwreckViewDescription];
-
+  //let total = [...shipwreckView, ...shipwreckViewDescription];
+  let total = [...shipwreckViewDescription];
   return (
     <section className="filter" aria-label={`Filters the ${view}`}>
       <hr></hr>

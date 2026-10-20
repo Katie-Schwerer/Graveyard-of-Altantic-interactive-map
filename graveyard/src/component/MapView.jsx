@@ -16,7 +16,7 @@ function InvalidateSize() {
 }
 
 function MapView() {
-  const { shipwreckView, shipwreckViewDescription } = useShipwreckFilterContext();
+  const { shipwreckViewDescription } = useShipwreckFilterContext();
 
   return (
     <div className="map-comp">
@@ -30,9 +30,9 @@ function MapView() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {shipwreckView.map((ship, index) => (
+        {/*{shipwreckView.map((ship, index) => (
           <ShipWreckMarker shipwreck={ship} key={index} />
-        ))}
+        ))}*/}
         {shipwreckViewDescription.map((ship, index) => (
           <ShipWreckMarker shipwreck={ship} key={index} description={true}/>
         ))}

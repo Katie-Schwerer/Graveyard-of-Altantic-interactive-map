@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import shipwrecks from "../../data/Shipwrecks.json";
+//import shipwrecks from "../../data/shipwrecks.json";
 import shipwreck from "../../data/Shipwrecks-Featured.json";
 import {
   getMaxYear,
@@ -7,11 +7,11 @@ import {
   getShipWreckYear,
 } from "../../support-functions/date-function";
 
-const shipwrecksArray = shipwrecks.Shipwrecks;
+//const shipwrecksArray = shipwrecks.Shipwrecks;
 const shipwrecksDescription = shipwreck.Shipwrecks;
 
-let minYear = getMinYear(shipwrecksArray, shipwrecksDescription);
-let maxYear = getMaxYear(shipwrecksArray, shipwrecksDescription);
+let minYear = getMinYear([], shipwrecksDescription);
+let maxYear = getMaxYear([], shipwrecksDescription);
 
 export function useShipwreckFilters() {
   const [typeFilter, setTypeFilter] = useState([]);
@@ -23,7 +23,7 @@ export function useShipwreckFilters() {
   const shipwreckEventsList = useMemo(() => {
     return [
       ...new Set([
-        ...shipwrecksArray.map((ship) => ship.shipwreckEvent),
+        //...shipwrecksArray.map((ship) => ship.shipwreckEvent),
         ...shipwrecksDescription.map((ship) => ship.shipwreckEvent),
       ]),
     ];
@@ -32,7 +32,7 @@ export function useShipwreckFilters() {
   const shipwreckCountryList = useMemo(() => {
     return [
       ...new Set([
-        ...shipwrecksArray.map((ship) => ship.country),
+        //...shipwrecksArray.map((ship) => ship.country),
         ...shipwrecksDescription.map((ship) => ship.country),
       ]),
     ];
@@ -41,7 +41,7 @@ export function useShipwreckFilters() {
   const shipWarList = useMemo(() => {
     return [
       ...new Set([
-        ...shipwrecksArray.map((ship) => ship.wardropdown),
+        //...shipwrecksArray.map((ship) => ship.wardropdown),
         ...shipwrecksDescription.map((ship) => ship.war),
       ]),
     ].filter(Boolean);
@@ -84,7 +84,7 @@ export function useShipwreckFilters() {
     setSelectedYear(0);
   };
 
-  let shipwreckView = useMemo(() => {
+  {/* let shipwreckView = useMemo(() => {
     return shipwrecksArray.filter((ship) => {
       const typeMatch = !typeFilter.includes(ship.type);
       const eventMatch = event === "" || ship.shipwreckEvent === event;
@@ -94,7 +94,7 @@ export function useShipwreckFilters() {
         selectedYear === 0 || getShipWreckYear(ship.sunk) === selectedYear;
       return typeMatch && eventMatch && countryMatch && warMatch && yearMatch;
     });
-  }, [typeFilter, event, country, warDownDrop, selectedYear]);
+  }, [typeFilter, event, country, warDownDrop, selectedYear]); */}
 
   let shipwreckViewDescription = useMemo(() => {
     return shipwrecksDescription.filter((ship) => {
@@ -109,7 +109,7 @@ export function useShipwreckFilters() {
   }, [typeFilter, event, country, warDownDrop, selectedYear]);
 
   return {
-    shipwrecksArray,
+    //shipwrecksArray,
     shipwrecksDescription,
     minYear,
     maxYear,
@@ -119,7 +119,7 @@ export function useShipwreckFilters() {
     shipwreckEventsList,
     shipwreckCountryList,
     shipWarList,
-    shipwreckView,
+    //shipwreckView,
     shipwreckViewDescription,
     warDownDrop,
     handleTypeFilter,
