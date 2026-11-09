@@ -54,3 +54,8 @@ h3 {
 hr {
     margin-bottom: 6px;
 }
+
+.modal-button:focus-visible {
+    outline: 2px solid #005fcc;
+    outline-offset: 1px;
+}

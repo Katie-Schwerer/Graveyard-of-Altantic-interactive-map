@@ -43,7 +43,7 @@ function DescriptionCard({ shipwreck }) {
         </div>
         <h3>{shipwreck.shipName}</h3>
         <div className="bottom">
-          <button type="button" ref={triggerRef} onClick={() => setIsOpen(true)}>
+          <button type="button" class="modal-button" ref={triggerRef} onClick={() => setIsOpen(true)}>
             Get More Information on {shipwreck.shipName}
           </button>
         </div>

@@ -31,27 +31,33 @@ let typeAndIcons = [
     type: "Sailing Vessel",
     icon: <SailingIcon style={{ fontSize: "18px" }} />,
   },
-  { type: "Tanker", icon: <WaterDropIcon style={{ fontSize: "18px", color: "#3019E2" }} /> },
+  {
+    type: "Tanker",
+    icon: <WaterDropIcon style={{ fontSize: "18px", color: "#3019E2" }} />,
+  },
   /*{
     type: "Gas Stern Wheel",
     icon: <GasMeterIcon style={{ fontSize: "18px", color: "#d32f2f" }} />,
   },*/
-  { type: "Steamer", icon: <RxColorWheel size={18} color="006700"/> },
+  { type: "Steamer", icon: <RxColorWheel size={18} color="006700" /> },
   { type: "Trawler", icon: <GiFishingBoat size={18} color="5A24E2" /> },
-  { type: "Barge", icon: <DirectionsBoatIcon style={{ fontSize: "18px", color: "#5649a8" }} /> },
-  { type: "Lightship", icon: <FaLightbulb size={18} color="4a6000"/> },
-  { type: "Freighter", icon: <GiCargoShip size={18} color="9c3600"/> },
-  { type: "Tugboat", icon: <RiShip2Fill size={18} color="b40032"/> },
+  {
+    type: "Barge",
+    icon: <DirectionsBoatIcon style={{ fontSize: "18px", color: "#5649a8" }} />,
+  },
+  { type: "Lightship", icon: <FaLightbulb size={18} color="4a6000" /> },
+  { type: "Freighter", icon: <GiCargoShip size={18} color="9c3600" /> },
+  { type: "Tugboat", icon: <RiShip2Fill size={18} color="b40032" /> },
   //{ type: "Dredge", icon: <GiCargoCrane size={18} color="A80080"/> },
-  { type: "Submarine", icon: <GiSubmarine size={18} color="0057ad"/> },
+  { type: "Submarine", icon: <GiSubmarine size={18} color="0057ad" /> },
   { type: "Fishing Vessel", icon: <GiBoatFishing size={18} color="8c00c8" /> },
-  { type: "Yacht", icon: <SiMentorcruise size={18} color="00606f"/> },
+  { type: "Yacht", icon: <SiMentorcruise size={18} color="00606f" /> },
   //{ type: "Motor Vessel Diesel", icon: <PiEngineBold size={18} color="386300" /> },
-  { type: "Gunboat", icon: <GiBattleship color="455ABC"/> },
+  { type: "Gunboat", icon: <GiBattleship color="455ABC" /> },
   { type: "Patrol Boat", icon: <GiPoliceBadge color="CF000B" /> },
   { type: "Tank Landing Ship", icon: <SiCodeship color="107300" /> },
   { type: "Ironclad", icon: <GiIronHulledWarship color="5B5E5D" /> },
-  { type: "Liberty Ship", icon: <FaShip size={18} color="#455a64"/> },
+  { type: "Liberty Ship", icon: <FaShip size={18} color="#455a64" /> },
   //{ type: "Unknown", icon: <span className="circle"></span> },
 ];
 
@@ -72,8 +78,9 @@ function Filter({ view }) {
     setEvent,
     setWarDownDrop,
     resetFilters,
+    selectedYear,
     //shipwreckView,
-    shipwreckViewDescription
+    shipwreckViewDescription,
   } = useShipwreckFilterContext();
 
   //let total = [...shipwreckView, ...shipwreckViewDescription];
@@ -95,9 +102,7 @@ function Filter({ view }) {
             value={event}
             onChange={(e) => setEvent(e.target.value)}
           >
-            <option value="">
-              Select From the Shipwreck Event:
-            </option>
+            <option value="">Select From the Shipwreck Event:</option>
             {shipwreckEventsList.map((item, index) => (
               <option key={index} value={item}>
                 {item}
@@ -136,24 +141,26 @@ function Filter({ view }) {
           </select>
         </div>
         <div className="dates select">
-          <label htmlFor="date-range">Sunk Year Range: </label>
-          <Box sx={{ width: '80%', mx: 3 }}>
+          <label htmlFor="year-range">Sunk Year Range: </label>
+          <Box sx={{ width: "80%", mx: 3 }}>
             <Slider
-              id="date-range"
+              id="year-range"
               min={minYear}
               max={maxYear}
               valueLabelDisplay="auto"
+              value={selectedYear}
+              getAriaLabel={() => 'Sunk Yeak Range'}
               marks={[
                 { value: minYear, label: `${minYear}` },
                 { value: maxYear, label: `${maxYear}` },
               ]}
-              onChange={(e) => handleYearFilter(e.target.value)}
+              onChange={(_, value) => handleYearFilter(value)}
             />
           </Box>
         </div>
         <div className="ship-type">
           <p className="filter-label">Ship Type Filter Buttons:</p>
-          {view === "Map" ? (
+
             <div className="map-filter">
               {typeAndIcons.map((type, index) => (
                 <button
@@ -164,28 +171,16 @@ function Filter({ view }) {
                   onClick={() => handleTypeFilter(type.type)}
                   aria-pressed={typeFilter.includes(type.type)}
                 >
-                  <span aria-hidden="true" className={typeFilter.includes(type.type) && "hide"}>{type.icon}</span> {type.type}
+                  <span
+                    aria-hidden="true"
+                    className={typeFilter.includes(type.type) && "hide"}
+                  >
+                    {type.icon}
+                  </span>{" "}
+                  {type.type}
                 </button>
               ))}
             </div>
-          ) : (
-            view === "Table" && (
-              <div className="map-filter">
-                {typeAndIcons.map((type, index) => (
-                  <button
-                    key={index}
-                    className={`filter-button ${
-                      typeFilter.includes(type.type) ? "non-visible" : ""
-                    }`}
-                    onClick={() => handleTypeFilter(type.type)}
-                    aria-pressed={typeFilter.includes(type.type)}
-                  >
-                    {type.type}
-                  </button>
-                ))}
-              </div>
-            )
-          )}
         </div>
       </div>
       <hr />

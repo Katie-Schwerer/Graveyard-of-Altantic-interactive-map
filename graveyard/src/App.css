@@ -75,6 +75,7 @@ button.filter-button.non-visible {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 5px;
   width: 60%;
 }
 
@@ -138,7 +139,3 @@ header {
   }
 }
 
-:focus-visible {
-  outline: 3px solid #005fcc;
-  outline-offset: 2px;
-}

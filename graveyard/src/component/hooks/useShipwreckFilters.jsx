@@ -18,7 +18,7 @@ export function useShipwreckFilters() {
   const [event, setEvent] = useState("");
   const [country, setCountry] = useState("");
   const [warDownDrop, setWarDownDrop] = useState("");
-  const [selectedYear, setSelectedYear] = useState(0);
+  const [selectedYear, setSelectedYear] = useState([minYear, maxYear]);
 
   const shipwreckEventsList = useMemo(() => {
     return [
@@ -81,10 +81,11 @@ export function useShipwreckFilters() {
     setEvent("");
     setCountry("");
     setWarDownDrop("");
-    setSelectedYear(0);
+    setSelectedYear([minYear, maxYear]);
   };
 
-  {/* let shipwreckView = useMemo(() => {
+  {
+    /* let shipwreckView = useMemo(() => {
     return shipwrecksArray.filter((ship) => {
       const typeMatch = !typeFilter.includes(ship.type);
       const eventMatch = event === "" || ship.shipwreckEvent === event;
@@ -94,7 +95,9 @@ export function useShipwreckFilters() {
         selectedYear === 0 || getShipWreckYear(ship.sunk) === selectedYear;
       return typeMatch && eventMatch && countryMatch && warMatch && yearMatch;
     });
-  }, [typeFilter, event, country, warDownDrop, selectedYear]); */}
+  }, [typeFilter, event, country, warDownDrop, selectedYear]); */
+}
+
 
   let shipwreckViewDescription = useMemo(() => {
     return shipwrecksDescription.filter((ship) => {
@@ -102,8 +105,8 @@ export function useShipwreckFilters() {
       const eventMatch = event === "" || ship.shipwreckEvent === event;
       const countryMatch = country === "" || ship.country === country;
       const warMatch = warDownDrop === "" || ship.war === warDownDrop;
-      const yearMatch =
-        selectedYear === 0 || getShipWreckYear(ship.sunk) === selectedYear;
+      let year = getShipWreckYear(ship.sunk);
+      const yearMatch =  year >= selectedYear[0] && year <= selectedYear[1];
       return typeMatch && eventMatch && countryMatch && warMatch && yearMatch;
     });
   }, [typeFilter, event, country, warDownDrop, selectedYear]);
@@ -120,6 +123,7 @@ export function useShipwreckFilters() {
     shipwreckCountryList,
     shipWarList,
     //shipwreckView,
+    selectedYear,
     shipwreckViewDescription,
     warDownDrop,
     handleTypeFilter,
