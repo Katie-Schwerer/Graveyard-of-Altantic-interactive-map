@@ -24,6 +24,14 @@ function MapView() {
         center={[35.193515, -75.494042]}
         zoom={8}
         aria-label="Map of North Carolina Coast"
+        dragging={false}
+        touchZoom={false}
+        doubleClickZoom={false}
+        scrollWheelZoom={false}
+        boxZoom={false}
+        zoomControl={true}
+        attributionControl={true}
+        fadeAnimation={false}
       >
         <InvalidateSize />
         <TileLayer

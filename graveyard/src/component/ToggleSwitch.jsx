@@ -1,5 +1,8 @@
 import React from "react";
 import "./ToggleSwitch.css";
+import { FaRegMap } from "react-icons/fa6";
+import { CiViewTable } from "react-icons/ci";
+
 
 function ToggleSwitch({ view, handleNavigate }) {
   return (
@@ -10,6 +13,7 @@ function ToggleSwitch({ view, handleNavigate }) {
         onClick={() => handleNavigate("Table")}
         aria-pressed={view === "Map"}
       >
+        <FaRegMap size={18}/>
         Map View
       </button>
       <button
@@ -18,6 +22,7 @@ function ToggleSwitch({ view, handleNavigate }) {
         onClick={() => handleNavigate("Map")}
         aria-pressed={view === "Table"}
       >
+        <CiViewTable size={18}/>
         Table View
       </button>
     </div>

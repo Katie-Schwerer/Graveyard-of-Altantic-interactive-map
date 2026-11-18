@@ -1,18 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import { Marker } from "react-leaflet";
-import ReactDOMServer from "react-dom/server";
-import L from "leaflet";
 
 import "leaflet/dist/leaflet.css";
 import iconDetermine from "../support-functions/type-selector";
 import NormalPopUp from "./popup-component/NormalPopUp";
 
-import CircleIcon from "@mui/icons-material/Circle";
-import DescriptionPopUp from "./popup-component/DescriptionPopUp";
+//import DescriptionPopUp from "./popup-component/DescriptionPopUp";
 
-function ShipWreckMarker({ shipwreck, description = false }) {
+function ShipWreckMarker({ shipwreck }) {
   const markerRef = useRef();
-  const shipType = [
+  /*const shipType = [
     "sailing vessel",
     "tanker",
     "gas stern wheel",
@@ -35,18 +32,7 @@ function ShipWreckMarker({ shipwreck, description = false }) {
     "trawler",
     "converted yacht",
     "converted tugboat"
-  ];
-
-  let iconHTML = ReactDOMServer.renderToString(
-    <CircleIcon style={{ color: "blue", fontSize: 14 }} />
-  );
-  let divIcon = L.divIcon({
-    html: iconHTML,
-    className: "custom-water-icon",
-    iconSize: [10, 10],
-    iconAnchor: [12, 12],
-    popupAnchor: [0, 0],
-  });
+  ];*/
 
   useEffect(() => {
     if (markerRef.current) {
@@ -62,8 +48,8 @@ function ShipWreckMarker({ shipwreck, description = false }) {
     }
   }, [shipwreck.shipName]);
 
-  if (shipType.includes(shipwreck["type"].toLowerCase())) {
-    return (
+
+  return (
       <Marker
         ref={markerRef}
         position={[shipwreck.latitude, shipwreck.longitude]}
@@ -75,26 +61,9 @@ function ShipWreckMarker({ shipwreck, description = false }) {
         }}
         keyboard={true}
       >
-        { description ? <DescriptionPopUp shipwreck={shipwreck} /> : <NormalPopUp shipInfo={shipwreck} /> }
+        <NormalPopUp shipInfo={shipwreck} />
       </Marker>
     );
-  }
-
-  return (
-    <Marker
-      ref={markerRef}
-      position={[shipwreck.latitude, shipwreck.longitude]}
-      icon={divIcon}
-      eventHandlers={{
-        click: () => {
-          console.log(`Shipwreck: ${shipwreck.shipName}`);
-        },
-      }}
-      keyboard={true}
-    >
-      { description ? <DescriptionPopUp shipwreck={shipwreck} /> : <NormalPopUp shipInfo={shipwreck} /> }
-    </Marker>
-  );
 }
 
 export default ShipWreckMarker;

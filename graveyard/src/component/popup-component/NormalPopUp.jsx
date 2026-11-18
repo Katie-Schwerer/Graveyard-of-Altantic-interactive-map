@@ -3,20 +3,11 @@ import { Popup } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
 import "./NormalPopUp.css";
+import { getShipWreckYear, getShipwreckDate } from "../../support-functions/date-function";
 
 function NormalPopUp({shipInfo}) {
-    const getShipWreckYear = (date) => {
-        const dateOfShipWreck = new Date(date);
-        return dateOfShipWreck.getFullYear();
-    }
-
-    const getShipwreckDate = (date) => {
-        const dateOfWreck = new Date(date);
-        return dateOfWreck.toLocaleDateString();
-    }
-
     return (
-        <Popup style={{ width: "300px !important" }}>
+        <Popup>
             <div className="heading">
                 <p>{shipInfo.type}</p>
                 <p>Year: { shipInfo.sunk ? getShipWreckYear(shipInfo.sunk) : "Unknown"}</p>

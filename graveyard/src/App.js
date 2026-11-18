@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import ToggleSwitch from "./component/ToggleSwitch";
 import MapView from "./component/MapView";
-import TableView from "./component/TableView";
+//import TableView from "./component/TableView";
 import Filter from "./component/filter-component/Filter";
 import { ShipwreckFilterProvider } from "./component/provider/ShipwreckFilterContext";
+import DirectoryView from "./component/DirectoryView";
 
 function App() {
   const [view, setView] = useState("Map");
@@ -28,7 +29,7 @@ function App() {
         </header>
         <div className="view">
           <Filter view={view} />
-          {view === "Map" ? <MapView /> : <TableView />}
+          {view === "Map" ? <MapView /> : <DirectoryView />}
         </div>
       </main>
     </ShipwreckFilterProvider>
