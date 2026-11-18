@@ -3,16 +3,6 @@
  * (c) 2010-2023 Vladimir Agafonkin, (c) 2010-2011 CloudMade
  */
 
-/*!
-* focus-trap 8.2.2
-* @license MIT, https://github.com/focus-trap/focus-trap/blob/master/LICENSE
-*/
-
-/*!
-* tabbable 6.5.0
-* @license MIT, https://github.com/focus-trap/tabbable/blob/master/LICENSE
-*/
-
 /**
  * @license React
  * react-dom-client.production.js

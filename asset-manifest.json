@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Graveyard-of-Altantic-interactive-map/static/css/main.2bc6bf28.css",
-    "main.js": "/Graveyard-of-Altantic-interactive-map/static/js/main.52fd1362.js",
+    "main.css": "/Graveyard-of-Altantic-interactive-map/static/css/main.ddf5aa11.css",
+    "main.js": "/Graveyard-of-Altantic-interactive-map/static/js/main.f764cd8d.js",
     "static/js/453.f10ed94c.chunk.js": "/Graveyard-of-Altantic-interactive-map/static/js/453.f10ed94c.chunk.js",
     "index.html": "/Graveyard-of-Altantic-interactive-map/index.html",
-    "main.2bc6bf28.css.map": "/Graveyard-of-Altantic-interactive-map/static/css/main.2bc6bf28.css.map",
-    "main.52fd1362.js.map": "/Graveyard-of-Altantic-interactive-map/static/js/main.52fd1362.js.map",
+    "main.ddf5aa11.css.map": "/Graveyard-of-Altantic-interactive-map/static/css/main.ddf5aa11.css.map",
+    "main.f764cd8d.js.map": "/Graveyard-of-Altantic-interactive-map/static/js/main.f764cd8d.js.map",
     "453.f10ed94c.chunk.js.map": "/Graveyard-of-Altantic-interactive-map/static/js/453.f10ed94c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2bc6bf28.css",
-    "static/js/main.52fd1362.js"
+    "static/css/main.ddf5aa11.css",
+    "static/js/main.f764cd8d.js"
   ]
 }
